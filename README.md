@@ -8,6 +8,9 @@ To start your Phoenix server and use application:
   * Start Phoenix endpoint with `mix phx.server`
   * Use Insomnia to send requests to the api
   * Routes:
-     - http://localhost:4000/api/restaurants -> Create restaurant - POST -> Body -> JSON { "name": "name", "email": "email" } 
-     - http://localhost:4000/api/supplies -> Create supply - POST -> Body -> JSON {"restaurant_id": "restaurant_id", "description": "description", "expiration_date": "expiration_date", "responsible": "responsible"}
-     - http://localhost:4000/api/supplies/id -> GET - Get specific supply
+     - http://localhost:4000/api/restaurants:
+       + Create restaurant - POST -> Body -> JSON { "name": "name", "email": "email" } 
+     - http://localhost:4000/api/supplies: 
+       + Create supply - POST -> Body -> JSON {"restaurant_id": "restaurant_id", "description": "description", "expiration_date": "expiration_date", "responsible": "responsible"}
+     - http://localhost:4000/api/supplies/id:
+       + GET - Get specific supply
