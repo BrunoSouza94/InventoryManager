@@ -2,6 +2,8 @@ defmodule Inventorymanager.Restaurant do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Inventorymanager.Supply
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:email, :name]
@@ -11,6 +13,8 @@ defmodule Inventorymanager.Restaurant do
   schema "restaurants" do
     field :email, :string
     field :name, :string
+
+    has_many :supplies, Supply
 
     timestamps()
   end

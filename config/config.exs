@@ -14,6 +14,8 @@ config :inventorymanager, Inventorymanager.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
+config :inventorymanager, Inventorymanager.Mailer, adapter: Bamboo.LocalAdapter
+
 # Configures the endpoint
 config :inventorymanager, InventorymanagerWeb.Endpoint,
   url: [host: "localhost"],
