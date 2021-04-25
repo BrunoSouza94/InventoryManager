@@ -14,3 +14,5 @@ To start your Phoenix server and use application:
        + Create supply - POST -> Body -> JSON {"restaurant_id": "restaurant_id", "description": "description", "expiration_date": "expiration_date", "responsible": "responsible"}
      - http://localhost:4000/api/supplies/id:
        + GET - Get specific supply
+     - http://localhost:4000/sent_emails:
+       + To see generated emails. For observasion purpouses the application is set to send the email each 30 seconds. The email contains the list of products that will expire within this week (starts at monday - ends at sunday).
