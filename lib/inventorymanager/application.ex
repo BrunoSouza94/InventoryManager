@@ -14,9 +14,10 @@ defmodule Inventorymanager.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Inventorymanager.PubSub},
       # Start the Endpoint (http/https)
-      InventorymanagerWeb.Endpoint
+      InventorymanagerWeb.Endpoint,
       # Start a worker by calling: Inventorymanager.Worker.start_link(arg)
       # {Inventorymanager.Worker, arg}
+      Inventorymanager.Supplies.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -25,8 +25,13 @@ defmodule Inventorymanager.Supplies.ExpirationEmail do
        }) do
     "<div>" <>
       "<div> Description: #{description} </div>" <>
+      "<br>" <>
       "<div> Expires: #{expiration_date} </div>" <>
+      "<br>" <>
       "<div> Responsible: #{responsible} </div>" <>
+      "<br>" <>
+      "<br>" <>
+      "<br>" <>
       "</div>"
   end
 end

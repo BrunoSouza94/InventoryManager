@@ -5,10 +5,14 @@ defmodule Inventorymanager.Supplies.NotifyExpiration do
   def send do
     data = GetByExpiration.call()
 
-    Enum.each(data, fn {to_mail, supplies} ->
-      to_mail
-      |> ExpirationEmail.create(supplies)
-      |> Mailer.deliver_later!()
-    end)
+    data
+    |> Task.async_stream(fn {to_mail, supplies} -> send_email(to_mail, supplies) end)
+    |> Stream.run()
+  end
+
+  def send_email(to_mail, supplies) do
+    to_mail
+    |> ExpirationEmail.create(supplies)
+    |> Mailer.deliver_later!()
   end
 end
